@@ -27,8 +27,8 @@ public class MainController {
 		System.out.println("5. Remove Bogie");
 		System.out.println("6. Remove Bogie from first position");
 		System.out.println("7. Remove Bogie from last");
-		System.out.println("8. View if Bogie Exists");
-		System.out.println("9. Logout");
+		System.out.println("5. View if Bogie Exists");
+		System.out.println("6. Logout");
 		System.out.print("\nEnter your choice : ");
 		
 		int choice = sc.nextInt();
