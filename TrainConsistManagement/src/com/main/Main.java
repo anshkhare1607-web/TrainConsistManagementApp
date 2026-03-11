@@ -1,8 +1,9 @@
 /*
- *  UC9: Group Bogies by Type (Collectors.groupingBy)
+ *  UC10: Count Total Seats in Train (reduce)
+
  * 
  * @author : Developer
- * version : 9.0
+ * version : 10.0
  * 
  */
 
@@ -33,7 +34,7 @@ public class Main {
 				mainController.displayAll(train); // unfiltered bogies
 				break;
 			case 3:
-				mainController.displayGrouped(train); // filtered bogies
+				mainController.getTotalCapacity(train); // filtered bogies
 				break;
 			case 4:
 				// display final consist
