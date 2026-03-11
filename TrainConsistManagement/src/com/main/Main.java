@@ -1,8 +1,8 @@
 /*
- *  UC12: Safety Compliance Check for Goods Bogies
+ *  UC13: Performance Comparison (Loops vs Streams)
  * 
  * @author : Developer
- * version : 12.0
+ * version : 13.0
  * 
  */
 
@@ -20,28 +20,7 @@ public class Main {
 		MainController mainController = new MainController();
 
 		mainController.displayHeader(); //displaying header
-		boolean running = true;
-		while(running) {
-			int choice = mainController.showMenuAndGetChoice(); // taking user choice
-			switch(choice) {
-				
-			case 1:
-				mainController.addGoodsBogie(train); //adding bogies
-				break;
-			case 2:
-				mainController.displayGoodsBogies(train); // printing bogies and their cargo
-				break;
-			case 3:
-				mainController.checkSafety(train); // checking safety compliance
-				break;
-			case 4:
-				mainController.displayGoodsBogies(train); // logout
-				running = false;
-				break;
-			default:
-				System.out.println("Invalid choice");
-			}
-		}
-
+		mainController.runBenchMark(train); // Performance Comparison
+		
 	}
 }
