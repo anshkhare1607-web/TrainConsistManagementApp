@@ -1,9 +1,8 @@
 /*
- *  UC10: Count Total Seats in Train (reduce)
-
+ *  UC11: Validate Train ID & Cargo Codes (Regex)
  * 
  * @author : Developer
- * version : 10.0
+ * version : 11.0
  * 
  */
 
@@ -20,31 +19,8 @@ public class Main {
 		Train train = new Train();
 		MainController mainController = new MainController();
 
-		mainController.displayHeader();
-		boolean running = true;
-		// Menu 
-		while(running) {
-			int choice = mainController.showMenuGetChoice(); //getting user choice
-
-			switch(choice) {
-			case 1:
-				mainController.addBogies(train); // adding bogies 
-				break;
-			case 2:
-				mainController.displayAll(train); // unfiltered bogies
-				break;
-			case 3:
-				mainController.getTotalCapacity(train); // filtered bogies
-				break;
-			case 4:
-				// display final consist
-				running = false;
-				break;
-			default:
-				System.out.println("Invalid choice");
-			}
-
-		}
+		mainController.displayHeader(); //displaying header
+		mainController.performValidation(train); // calling validation function
 
 	}
 }
