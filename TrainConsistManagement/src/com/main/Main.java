@@ -1,8 +1,8 @@
 /*
- *   UC17: Sort Bogie Names Using Arrays.sort()
+ *  UC18: Linear Search for Bogie ID (Array-Based Searching)
  * 
  * @author : Developer
- * version : 17.0
+ * version : 18.0
  * 
  */
 
@@ -14,9 +14,9 @@ import com.trainconsist.*;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws BogieNotFoundException {
 
-		Train train = new Train(3);
+		Train train = new Train();
 		MainController mainController = new MainController();
 
 		mainController.displayHeader(); //displaying header
@@ -32,22 +32,18 @@ public class Main {
 				break;
 			
 			case 2:
-				mainController.displayOriginal(train); // printing bogies
+				mainController.displayBogies(train); // printing bogies
 				break;
 				
 			case 3:
-				mainController.sortByType(train); // performing bubble sort
+				mainController.searchBogieById(train); // performing bubble sort
 				break;
 			
 			case 4:
-				mainController.sortByCapacity(train);
-				break;
-				
-			case 5:
 				running = false;
-				mainController.displayOriginal(train);
+				mainController.displayBogies(train);
 				break;
-				
+	
 			default:
 				System.out.println("Invalud choice");
 			}

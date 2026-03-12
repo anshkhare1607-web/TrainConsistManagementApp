@@ -6,44 +6,55 @@ import java.util.*;
 
 public class Train {
 
-	private String[] bogieTypes;
-	private int[] bogieCapacities;
-	private int count;
+	// Inner class GoodsBogie
+	public static class Bogie{
+		
+		private String type;
+		private int capacity;
 
-	public Train(int size){
-		bogieTypes = new String[size];
-		bogieCapacities = new int[size];
-		count = 0;
+		public Bogie(String type, int capacity){
+			this.type = type;
+			this.capacity = capacity;
+		}
+
+		public String getType() {
+			return type;
+		} 
+
+		public int getCapacity() {
+			return capacity; 
+		}
+	}
+
+	private List<Bogie> bogies; // list of object of Bogies
+
+	public Train() {
+		this.bogies = new ArrayList<>();
 	}
 
 	public void addBogie(String type, int capacity){ // add objects to the list
-		if(count<bogieTypes.length) {
-			bogieTypes[count] = type;
-			bogieCapacities[count] = capacity;
-			count++;
-			
-		} 
-	}
-	public String[] getType() {
-		return bogieTypes;
-	} 
-
-	public int[] getCapacity() {
-		return bogieCapacities; 
+		bogies.add(new Bogie(type, capacity));  
 	}
 
-	public int getCount() {
-		return count;
+	// array based searching
+	public Bogie searchById(String bogieId) throws BogieNotFoundException{ 
+		boolean isFound = false;
+		for (Train.Bogie bogie : getBogie()) {
+            if(bogie.getType().equalsIgnoreCase(bogieId)) {
+            	isFound = true;
+            	return bogie;
+            }
+        } 
+		if(!isFound) {
+			throw new BogieNotFoundException("No bogie found");
+		}
+		return null;
+				
+	}
+	public List<Bogie> getBogie(){  
+		return bogies;
 	}
 
-
-	public void sortBogieTypes() {
-		Arrays.sort(bogieTypes);
-	}
-	
-	public void sortBogieCapacity() {
-		Arrays.sort(bogieCapacities);
-	}
 }
 
 
