@@ -36,8 +36,8 @@ public class Train {
 		bogies.add(new Bogie(type, capacity));  
 	}
 
-	// array based searching
-	public Bogie searchById(String bogieId) throws BogieNotFoundException{ 
+	// binary searching
+	public Bogie searchById(String bogieId) throws IllegalStateException{ 
 		boolean isFound = false;
 		for (Train.Bogie bogie : getBogie()) {
             if(bogie.getType().equalsIgnoreCase(bogieId)) {
@@ -46,7 +46,7 @@ public class Train {
             }
         } 
 		if(!isFound) {
-			throw new BogieNotFoundException("No bogie found");
+			throw new IllegalStateException("No bogie found");
 		}
 		return null;
 				

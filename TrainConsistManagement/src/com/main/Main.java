@@ -1,8 +1,8 @@
 /*
- *  UC18: Linear Search for Bogie ID (Array-Based Searching)
+ *  UC20: Exception Handling During Search Operations
  * 
  * @author : Developer
- * version : 18.0
+ * version : 20.0
  * 
  */
 
@@ -14,7 +14,7 @@ import com.trainconsist.*;
 
 public class Main {
 
-	public static void main(String[] args) throws BogieNotFoundException {
+	public static void main(String[] args) throws IllegalStateException {
 
 		Train train = new Train();
 		MainController mainController = new MainController();
@@ -36,7 +36,7 @@ public class Main {
 				break;
 				
 			case 3:
-				mainController.searchBogieById(train); // performing bubble sort
+				mainController.searchBogieById(train); // performing binary search
 				break;
 			
 			case 4:
