@@ -1,8 +1,8 @@
 /*
- *  UC13: Performance Comparison (Loops vs Streams)
+ *  UC14: Handle Invalid Bogie Capacity (Custom Exception)
  * 
  * @author : Developer
- * version : 13.0
+ * version : 14.0
  * 
  */
 
@@ -20,7 +20,29 @@ public class Main {
 		MainController mainController = new MainController();
 
 		mainController.displayHeader(); //displaying header
-		mainController.runBenchMark(train); // Performance Comparison
+
+		boolean running = true;
 		
+		while(running) {
+			int choice = mainController.showMenuAndGetChoice();
+			switch(choice) {
+			
+			case 1:
+				mainController.addPassengerBogie(train);
+				break;
+			
+			case 2:
+				mainController.displayPassengerBogies(train);
+				break;
+			
+			case 3:
+				running = false;
+				mainController.displayPassengerBogies(train);
+				break;
+				
+			default:
+				System.out.println("Invalud choice");
+			}
+		}
 	}
 }
