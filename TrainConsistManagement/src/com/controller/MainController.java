@@ -11,7 +11,7 @@ public class MainController {
     
     public void displayHeader() {
         System.out.println("==================================================");
-        System.out.println(" UC12 - Safety Compliance Check for Goods Bogies ");
+        System.out.println("         ==Train Consist Management App==           ");
         System.out.println("==================================================\n");
     }
     
