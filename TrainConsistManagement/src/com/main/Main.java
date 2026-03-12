@@ -1,8 +1,8 @@
 /*
- *  UC18: Linear Search for Bogie ID (Array-Based Searching)
+ * UC19: Binary Search for Bogie ID (Optimized Searching)
  * 
  * @author : Developer
- * version : 18.0
+ * version : 19.0
  * 
  */
 
@@ -14,7 +14,7 @@ import com.trainconsist.*;
 
 public class Main {
 
-	public static void main(String[] args) throws BogieNotFoundException {
+	public static void main(String[] args) throws IllegalStateException {
 
 		Train train = new Train();
 		MainController mainController = new MainController();
@@ -22,28 +22,28 @@ public class Main {
 		mainController.displayHeader(); //displaying header
 
 		boolean running = true;
-		
+
 		while(running) { 
 			int choice = mainController.showMenuAndGetChoice(); // menu
 			switch(choice) {
-			
+
 			case 1:
 				mainController.addBogies(train); // adding bogie 
 				break;
-			
+
 			case 2:
 				mainController.displayBogies(train); // printing bogies
 				break;
-				
+
 			case 3:
 				mainController.searchBogieById(train); // performing bubble sort
 				break;
-			
+
 			case 4:
 				running = false;
 				mainController.displayBogies(train);
 				break;
-	
+
 			default:
 				System.out.println("Invalud choice");
 			}
