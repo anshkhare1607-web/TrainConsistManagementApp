@@ -1,8 +1,8 @@
 /*
- *  UC14: Handle Invalid Bogie Capacity (Custom Exception)
+ *  UC15: Safe Cargo Assignment Using try-catch-finally
  * 
  * @author : Developer
- * version : 14.0
+ * version : 15.0
  * 
  */
 
@@ -23,19 +23,15 @@ public class Main {
 
 		boolean running = true;
 		
-		while(running) {
-			int choice = mainController.showMenuAndGetChoice();
+		while(running) { 
+			int choice = mainController.showMenuAndGetChoice(); // menu
 			switch(choice) {
 			
 			case 1:
-				mainController.addPassengerBogie(train);
+				mainController.assignCargotoBogie(); // adding bogie and checking cargo safety
 				break;
 			
 			case 2:
-				mainController.displayPassengerBogies(train);
-				break;
-			
-			case 3:
 				running = false;
 				mainController.displayPassengerBogies(train);
 				break;
