@@ -1,8 +1,8 @@
 /*
- *  UC16: Sort Passenger Bogies by Capacity (Bubble Sort – Algorithm Intro)
+ *   UC17: Sort Bogie Names Using Arrays.sort()
  * 
  * @author : Developer
- * version : 16.0
+ * version : 17.0
  * 
  */
 
@@ -16,7 +16,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		Train train = new Train();
+		Train train = new Train(3);
 		MainController mainController = new MainController();
 
 		mainController.displayHeader(); //displaying header
@@ -32,15 +32,20 @@ public class Main {
 				break;
 			
 			case 2:
-				mainController.displayBogies(train); // printing bogies
+				mainController.displayOriginal(train); // printing bogies
 				break;
 				
 			case 3:
-				mainController.performBubbleSort(train); // performing bubble sort
+				mainController.sortByType(train); // performing bubble sort
 				break;
+			
 			case 4:
+				mainController.sortByCapacity(train);
+				break;
+				
+			case 5:
 				running = false;
-				mainController.performBubbleSort(train);
+				mainController.displayOriginal(train);
 				break;
 				
 			default:
